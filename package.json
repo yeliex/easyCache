@@ -1,0 +1,37 @@
+{
+  "name": "easyCache",
+  "version": "1.0.1",
+  "description": "a lightweight cache library",
+  "main": "dist/index.js",
+  "scripts": {
+    "prepublish": "npm run build",
+    "publish": "npm run clean",
+    "clean": "rm -rf dist",
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yeliex/easyCache.git"
+  },
+  "keywords": [
+    "cache",
+    "data",
+    "database",
+    "db"
+  ],
+  "author": "yeliex",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yeliex/easyCache/issues"
+  },
+  "homepage": "https://github.com/yeliex/easyCache#readme",
+  "dependencies": {
+    "babel-plugin-transform-object-rest-spread": "^6.8.0"
+  },
+  "devDependencies": {
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.14.0",
+    "webpack": "^1.13.2"
+  }
+}
