@@ -4,16 +4,11 @@ const parseKeys = (key) => {
   if (!key) {
     throw new Error('key cannot be undefined');
   }
-  return typeof key === 'string' ? key.split('.') : key;
+  return key;
 };
 
 const recursionRead = (keys) => {
-  let value;
-  const result = keys.every((key) => {
-    value = caches[key];
-  return !!value;
-});
-  return result ? value : undefined;
+  return keys ? caches[keys] : caches;
 };
 
 export function read(key) {
@@ -21,17 +16,8 @@ export function read(key) {
 }
 
 const recursionWrite = (keys, value) => {
-  const obj = {} || caches[keys[0]];
-  keys.forEach((key, i) => {
-    if (i === keys.length - 1) {
-    obj[key] = value
-  } else {
-    obj[key] = obj[key] || {};
-  }
-});
-
-  caches = { ...caches, ...obj };
-  return caches[keys[0]];
+  caches[keys] = value;
+  return { [keys]: value };
 };
 
 export function write(key, value) {
