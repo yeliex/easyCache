@@ -1,4 +1,6 @@
 # easyCache (with the uppercase `C`)
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/yeliex/easyCache.svg)](https://greenkeeper.io/)
 a  lightweight cache library
 
 ## Installation
